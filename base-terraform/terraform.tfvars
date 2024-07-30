@@ -38,4 +38,20 @@ nat_count = null
 
 cluster_name = "karv-cluster"
 cluster_version = "1.27"
-eks_node_group_name = "karv-node-group"
+node_group_name = "karv-node-group"
+endpoint_private_access = false
+endpoint_public_access = false
+public_access_cidrs = [ "0.0.0.0/0" ]
+
+ami_type = "AL2_x86_64"
+ec2_ssh_key = "my-key.pem"
+instance_type = [ "t3.micro" ]
+max_size = 3
+min_size = 3
+desired_size = 3
+
+cluster_timeouts = {
+  create = "20m"
+  update = "20m"
+  delete = "25m"
+}
